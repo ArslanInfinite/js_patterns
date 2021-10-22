@@ -15,7 +15,7 @@ function memberFactory(){
 
     member.type = type
     member.define = function(){
-        console.log(`Name: ${this.name}, Membership: ${this.type}, Price: ${this.cost}`)
+        // console.log(`Name: ${this.name}, Membership: ${this.type}, Price: ${this.cost}`)
     }
 
     return member

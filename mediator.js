@@ -1,12 +1,12 @@
 // Mediator is an interface between communicating between colleagues which are mediated objects
 
-const user = function(name){
+const User = function(name){
     this.name = name
     this.chatroom = null
 }
 
 // the idea is to have users interact with one another or the entire chatroom
-user.prototype = {
+User.prototype = {
     send: function(message, recipient){
         // "this" pertains to the user
         this.chatroom.send(message, this, recipient)
@@ -16,7 +16,7 @@ user.prototype = {
     }
 }
 
-const chatroom = function(chatroom){
+const Chatroom = function(chatroom){
     let users = {} // list of users
 
     return {
@@ -43,3 +43,16 @@ const chatroom = function(chatroom){
     }
 }
 
+const arslan = new User('Arslan')
+const tony = new User('Tony')
+const steve = new User('Steve')
+
+const chatroom = new Chatroom()
+
+chatroom.register(arslan)
+chatroom.register(tony)
+chatroom.register(steve)
+
+arslan.send('Hello Tony', tony)
+tony.send('Hello Arslan', arslan)
+steve.send('Assemble')
