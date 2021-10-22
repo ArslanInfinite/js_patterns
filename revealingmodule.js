@@ -21,6 +21,6 @@ const ItemCtrl = (function(){
     }
 })()
 
-ItemCtrl.add({ id: 1, name: 'Food'})
+// ItemCtrl.add({ id: 1, name: 'Food'})
 
-console.log(ItemCtrl.get(1))
+// console.log(ItemCtrl.get(1))
