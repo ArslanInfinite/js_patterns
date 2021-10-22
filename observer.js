@@ -13,7 +13,7 @@ EventObserver.prototype = {
         // filter out from the list whatever matches the callback function.
         // if there is not match, the callback stays on the list
         // filter returns a new list and reassigns the list of observers
-        this.observers = this.observers.filter(function(){
+        this.observers = this.observers.filter(function(item){
             if(item !== fn){
                 return item
             }
@@ -50,3 +50,12 @@ document.querySelector('.sub-ms').addEventListener('click', function() {
     click.fire()
   });
   
+  // Event Handlers
+
+  const getCurMilliseconds = function() {
+    console.log(`Current Milliseconds: ${new Date().getMilliseconds()}`);
+  }
+
+  const getCurSeconds = function() {
+    console.log(`Current Seconds: ${new Date().getSeconds()}`);
+  }
