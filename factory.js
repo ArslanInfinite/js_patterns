@@ -15,7 +15,7 @@ function memberFactory(){
 
     member.type = type
     member.define = function(){
-        console.log(`${this.name} (${this.type}) ${this.cost}`)
+        console.log(`Name: ${this.name}, Membership: ${this.type}, Price: ${this.cost}`)
     }
 
     return member
@@ -44,4 +44,9 @@ const factory = new memberFactory()
 
 members.push(factory.createMember('Arslan', 'standard'))
 
-console.log(members)
+// console.log(members)
+
+members.forEach(function(member){
+    member.define()
+})
+
