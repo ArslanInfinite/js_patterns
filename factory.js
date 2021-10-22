@@ -6,18 +6,42 @@ function memberFactory(){
         let member 
 
         if(type === 'simple'){
-            member = new SimpleMembership(name)
+            member = new simpleMembership(name)
         } else if (type === 'standard') {
-            member = new StandardMembership(name)
+            member = new standardMembership(name)
         } else if (type === 'super') {
-            member = new SuperMembership(name)
+            member = new superMembership(name)
     }
 
     member.type = type
     member.define = function(){
         console.log(`${this.name} (${this.type}) ${this.cost}`)
     }
-    
+
     return member
     }
 }
+
+// creating constructors for subclasses
+
+const simpleMembership = function(name){
+    this.name = name
+    this.cost = '$5'
+}
+
+const standardMembership = function(name){
+    this.name = name
+    this.cost = '$15'
+}
+
+const superMembership = function(name){
+    this.name = name
+    this.cost = '$25'
+}
+
+const members = []
+const factory = new memberFactory()
+
+members.push(factory.createMember('Arslan', 'standard'))
+
+console.log(members)
