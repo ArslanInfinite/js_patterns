@@ -27,3 +27,26 @@ EventObserver.prototype = {
     }
 }
 
+const click = new EventObserver()
+
+// Event Listeners
+document.querySelector('.sub-ms').addEventListener('click', function() {
+    click.subscribe(getCurMilliseconds)
+  });
+  
+  document.querySelector('.unsub-ms').addEventListener('click', function() {
+    click.unsubscribe(getCurMilliseconds)
+  });
+  
+  document.querySelector('.sub-s').addEventListener('click', function() {
+    click.subscribe(getCurSeconds)
+  });
+  
+  document.querySelector('.unsub-s').addEventListener('click', function() {
+    click.unsubscribe(getCurSeconds)
+  });
+  
+  document.querySelector('.fire').addEventListener('click', function() {
+    click.fire()
+  });
+  
